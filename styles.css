@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #6b5b95, #b8a9c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    color: #fff;
+    font-size: 3em;
+    animation: titleAnimation 3s infinite;
+}
+
+@keyframes titleAnimation {
+    0%, 100% { transform: scale(1); color: #fff; }
+    50% { transform: scale(1.2); color: #ffcc00; }
+}
+
+.magic-button {
+    background: #ffcc00;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.magic-button:hover {
+    background: #ffaa00;
+    transform: scale(1.1);
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #ffcc00;
+    margin: 50px auto;
+    transition: transform 1s, background 1s;
+}
+
+@keyframes boxAnimation {
+    0%, 100% { transform: translateY(0); background: #ffcc00; }
+    50% { transform: translateY(-200px); background: #ff5733; }
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes flyIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+#flyingImage {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: flyIn 2s forwards;
+}
