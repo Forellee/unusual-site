@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #6b5b95, #b8a9c9);
+    background: linear-gradient(45deg, #b151dd, #b8a9c9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,4 +76,28 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: flyIn 2s forwards;
+}
+
+#presentationText {
+    font-size: 4em;
+    background: linear-gradient(45deg, #ffcc00, #ff5733, #6b5b95, #b8a9c9);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 3s infinite, textBounce 3s infinite;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes textBounce {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -55%) scale(1.1); }
 }
